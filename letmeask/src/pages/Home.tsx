@@ -9,11 +9,14 @@ import googleIconImg from '../assets/images/google-icon.svg';
 import '../styles/auth.scss';
 import { FormEvent, useState } from 'react';
 import { database } from '../services/firebase';
+import { useTheme } from '../hooks/useTheme';
 
 export function Home(){
     const history = useHistory();
     const { signInWithGoogle , user} = useAuth();
     const [ roomCode, setRoomCode ] = useState('');
+
+    const {theme, toggleTheme} = useTheme();
 
     async function handleCreateRoom(){
         if(!user){
