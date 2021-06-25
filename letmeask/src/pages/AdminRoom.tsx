@@ -11,14 +11,11 @@ import { database } from '../services/firebase';
 import '../styles/room.scss';
 
 
-
-
-
 type RoomsParams = {
     id: string;
 };
 
-export function Room(){
+export function AdminRoom(){
     const params = useParams<RoomsParams>();
     const roomId = params.id;
     const { user } = useAuth(); // Context with user info
